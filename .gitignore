@@ -1,0 +1,30 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Java / Maven build outputs
+**/target/
+**/build-output/
+**/release-output/
+
+# This file contains a machine-specific Maven cache path.
+backend/.mvn/maven.config
+
+# Frontend dependencies and build outputs
+frontend/node_modules/
+frontend/dist/
+
+# Local database and runtime files
+backend/data/
+*.mv.db
+*.trace.db
+*.log
+
+# Secrets and local environment files
+.env
+*.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
