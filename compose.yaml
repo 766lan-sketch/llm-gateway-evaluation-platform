@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      GATEWAY_RATE_LIMIT_MAX: ${GATEWAY_RATE_LIMIT_MAX:-20}
+      GATEWAY_RATE_LIMIT_WINDOW_SECONDS: ${GATEWAY_RATE_LIMIT_WINDOW_SECONDS:-60}
+    ports:
+      - "18083:18083"
+    volumes:
+      - gateway-data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "5175:80"
+    restart: unless-stopped
+
+volumes:
+  gateway-data:

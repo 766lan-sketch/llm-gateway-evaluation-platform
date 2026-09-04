@@ -1,0 +1,4 @@
+release-output/
+target/
+data/
+.mvn/maven.config
